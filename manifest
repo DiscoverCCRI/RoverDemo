@@ -1,6 +1,6 @@
 #/bin/bash
 
 cd ~/catkin_ws/src && git clone https://github.com/LeoRover/leo_examples.git && git clone https://github.com/https://github.com/ros-perception/ar_track_alvar.git
-cd ~/catkin_ws && rosdep update && rosdep install --from-paths src -i
+cd ~/catkin_ws && rosdep update && rosdep install --from-paths src -i -y
 source ~/.bashrc
 . /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
