@@ -1,0 +1,6 @@
+#/bin/bash
+
+#sudo apt install ros-noetic-ar-track-alvar
+cd ~/catkin_ws/src && git clone https://github.com/LeoRover/leo_examples.git
+cd ~/catkin_ws && rosdep update && rosdep install --from-paths src -i
+. /opt/ros/$ROS_DISTRO/setup.bash && cd ~/catkin_ws && catkin_make
