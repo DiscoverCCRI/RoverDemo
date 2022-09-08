@@ -6,3 +6,4 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key B0981764
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y ros-noetic-leo-examples
 sudo apt install -y ros-noetic-ar-track-alvar
+pip3 install tflite-runtime
