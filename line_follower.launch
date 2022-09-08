@@ -1,5 +1,5 @@
 <launch>
-    <arg name="color_mask_file" default="$(find RoverDemo)/mask.yaml" doc="path to yaml file with color mask values"/>
+    <arg name="color_mask_file" default="mask.yaml" doc="path to yaml file with color mask values"/>
     <arg name="pub_mask" default="false" doc="flag specifying whether or not publish the color mask"/>
 
     <arg name="camera" default="camera/image_raw" doc="name of topic with Image messages"/>
