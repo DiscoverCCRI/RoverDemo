@@ -1,12 +1,7 @@
-#hue_min: 128
-#hue_max: 51
-#sat_min: 129
-#sat_max: 255
-#val_min: 91
-#val_max: 255
-hue_min: 94
-hue_max: 136
-sat_min: 38
-sat_max: 141
-val_min: 65
-val_max: 172
+hue_min: 128
+hue_max: 51
+sat_min: 129
+sat_max: 255
+val_min: 91
+val_max: 255
+
