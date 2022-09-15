@@ -3,20 +3,16 @@
 
 import roslaunch
 import rospy
-from rover_api.discover_lidar import Lidar
 
 
 def main():
 
-    range_finder = Lidar()
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
     roslaunch.configure_logging(uuid)
     launch = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/ros/noetic/share/leo_example_follow_ar_tag/launch/follor_ar_tag.launch"])
-    range_finder.start_recording()
     launch.start()
     rospy.loginfo("Launched")
     rospy.sleep(45)
-    range_finder.stop_recording()
 
     launch.shutdown()
 
