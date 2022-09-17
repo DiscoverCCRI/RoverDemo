@@ -17,7 +17,7 @@ def main():
 
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
     roslaunch.configure_logging(uuid)
-    launch = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/ros/noetic/share/leo_example_follow_ar_tag/launch/follor_ar_tag.launch"])
+    launch = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/ros/noetic/share/leo_example_follow_ar_tag/launch/follow_ar_tag.launch"])
     range_finder.start_recording()
     launch.start()
 
