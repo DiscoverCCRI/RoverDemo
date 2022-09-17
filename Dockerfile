@@ -10,4 +10,4 @@ RUN apt update \
 && pip3 install tflite-runtime
 
 RUN git clone https://github.com/DiscoverCCRI/RoverDemo.git \
-&& mv experiment_files ~/ && sudo rm -r RoverDemo
+&& mv RoverDemo/experiment_files ~/ && sudo rm -r RoverDemo
