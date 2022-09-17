@@ -4,8 +4,11 @@
 import roslaunch
 import rospy
 from std_msgs.msg import Bool
+from rover_api.discover_lidar import Lidar
 
 def main():
+
+    range_finder = Lidar()
 
     pub = rospy.Publisher("/finished", Bool, queue_size=10)
     msg = Bool()
@@ -15,11 +18,14 @@ def main():
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
     roslaunch.configure_logging(uuid)
     launch = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/ros/noetic/share/leo_example_follow_ar_tag/launch/follor_ar_tag.launch"])
+    range_finder.start_recording()
     launch.start()
+
     rospy.loginfo("Launched")
-    rospy.sleep(45)
+    rospy.sleep(90)
 
     launch.shutdown()
+    range_finder.stop_recording()
 
     # publish finished message
     msg.data = True

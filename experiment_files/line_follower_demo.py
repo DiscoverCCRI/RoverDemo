@@ -19,13 +19,14 @@ def main():
 
     roslaunch.configure_logging(uuid)
     launch = roslaunch.parent.ROSLaunchParent(uuid, ["line_follower.launch"])
-    launch.start()
+
     cam.start_recording()
+    launch.start()
     rospy.loginfo("Launched")
-    rospy.sleep(45)
-    cam.stop_recording()
+    rospy.sleep(90)
 
     launch.shutdown()
+    cam.stop_recording()
 
     # publish finished message
     msg.data = True
