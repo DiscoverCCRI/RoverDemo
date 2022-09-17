@@ -3,9 +3,14 @@
 
 import roslaunch
 import rospy
-
+from std_msgs.msg import Bool
 
 def main():
+
+    pub = rospy.Publisher("/finished", Bool, queue_size=10)
+    msg = Bool()
+    msg.data = False
+    pub.publish(msg)
 
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
     roslaunch.configure_logging(uuid)
@@ -15,6 +20,10 @@ def main():
     rospy.sleep(45)
 
     launch.shutdown()
+
+    # publish finished message
+    msg.data = True
+    pub.publish(msg)
 
 
 if __name__ == "__main__":
