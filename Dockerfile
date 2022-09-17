@@ -13,4 +13,4 @@ RUN git clone https://github.com/DiscoverCCRI/RoverDemo.git \
 && mv RoverDemo/experiment_files ~/ && sudo rm -r RoverDemo
 
 RUN echo "172.18.0.1 rover02" >> /etc/hosts
-RUN rm /ros-entrypoint.sh
+RUN rm /ros_entrypoint.sh
