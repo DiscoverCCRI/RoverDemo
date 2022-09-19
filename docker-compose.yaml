@@ -5,6 +5,7 @@ services:
         environment:
          - ROS_HOSTNAME=client
          - ROS_MASTER_URI=http://172.20.0.1:11311
+         - ROVER
         image: cjb873/leorover_demo:1.0
         ports:
          - 8083:8080
