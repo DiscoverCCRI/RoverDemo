@@ -7,7 +7,7 @@ from std_msgs.msg import Bool
 
 
 def main():
-
+    rospy.init_node("RoverDemo")
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
 
     pub = rospy.Publisher("/finished", Bool, queue_size=10)
@@ -20,7 +20,7 @@ def main():
 
     launch.start()
     rospy.loginfo("Launched")
-    rospy.sleep(15)
+    rospy.sleep(90)
 
     launch.shutdown()
 
