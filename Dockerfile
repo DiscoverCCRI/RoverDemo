@@ -8,8 +8,6 @@ RUN apt update \
 && sudo apt install -y ros-noetic-leo-examples \
 && sudo apt install -y ros-noetic-ar-track-alvar \
 && pip3 install tflite-runtime
-
 RUN git clone https://github.com/DiscoverCCRI/RoverDemo.git \
 && mv RoverDemo/experiment_files ~/ && sudo rm -r RoverDemo
 
-RUN echo "172.18.0.1 rover02" >> /etc/hosts
