@@ -2,7 +2,7 @@
 An example experiment for our NSF demo
 
 # Installation
-Start buy running the manifest file using bash in the test environment.
+Pull the docker image cjb873/leorover_demo:1.0 on both rovers. Clone this repo on both rovers. 
 
 # Run
 Run the line follower program as a python script on the leader rover.
