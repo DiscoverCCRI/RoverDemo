@@ -10,4 +10,7 @@ RUN sudo apt update && sudo apt -y upgrade \
 && pip3 install tflite-runtime
 RUN git clone https://github.com/DiscoverCCRI/RoverDemo.git \
 && mv RoverDemo/experiment_files ~/ && sudo rm -r RoverDemo
-
+RUN rm -r /root/catkin_ws/src/rover_api \
+&& git clone https://github.com/DiscoverCCRI/RoverAPI.git \
+&& mv RoverAPI/rover_api /root/catkin_ws/src \
+&& source /opt/ros/noetic/setup.bash && catkin_make
