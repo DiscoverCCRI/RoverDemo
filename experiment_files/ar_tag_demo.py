@@ -13,7 +13,6 @@ LAUNCH_FILE = "/opt/ros/noetic/share/leo_example_follow_ar_tag/launch" \
 def main():
 
     range_finder = Lidar()
-    cam = Camera()
 
     pub = rospy.Publisher("/finished", Bool, queue_size=10)
     msg = Bool()
