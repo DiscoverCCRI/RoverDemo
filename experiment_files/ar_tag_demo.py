@@ -1,10 +1,14 @@
-#/usr/bin/env python3
+#!/usr/bin/env python3
 
 
 import roslaunch
 import rospy
 from std_msgs.msg import Bool
 from rover_api.discover_lidar import Lidar
+
+LAUNCH_FILE = "/opt/ros/noetic/share/leo_example_follow_ar_tag/launch" \
+              "/follow_ar_tag.launch"
+
 
 def main():
 
@@ -17,7 +21,7 @@ def main():
 
     uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
     roslaunch.configure_logging(uuid)
-    launch = roslaunch.parent.ROSLaunchParent(uuid, ["/opt/ros/noetic/share/leo_example_follow_ar_tag/launch/follow_ar_tag.launch"])
+    launch = roslaunch.parent.ROSLaunchParent(uuid, [LAUNCH_FILE])
     range_finder.start_recording()
     launch.start()
 
