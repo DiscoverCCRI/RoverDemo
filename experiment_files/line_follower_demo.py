@@ -21,7 +21,7 @@ def main():
 
     launch.start()
     rospy.loginfo("Launched")
-    rospy.sleep(90)
+    rospy.sleep(60)
 
     launch.shutdown()
 
