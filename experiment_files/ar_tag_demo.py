@@ -25,14 +25,12 @@ def main():
     roslaunch.configure_logging(uuid)
     launch = roslaunch.parent.ROSLaunchParent(uuid, [LAUNCH_FILE])
     range_finder.start_recording()
-    cam.start_recording()
     launch.start()
 
     rospy.loginfo("Launched")
-    rospy.sleep(60)
+    rospy.sleep(75)
 
     launch.shutdown()
-    cam.stop_recording()
     range_finder.stop_recording()
     
 
