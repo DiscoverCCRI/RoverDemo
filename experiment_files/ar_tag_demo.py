@@ -5,6 +5,7 @@ import roslaunch
 import rospy
 from std_msgs.msg import Bool
 from rover_api.discover_lidar import Lidar
+from rover_api.discover_camera import Camera
 
 LAUNCH_FILE = "/opt/ros/noetic/share/leo_example_follow_ar_tag/launch" \
               "/follow_ar_tag.launch"
@@ -13,6 +14,7 @@ LAUNCH_FILE = "/opt/ros/noetic/share/leo_example_follow_ar_tag/launch" \
 def main():
 
     range_finder = Lidar()
+    cam = Camera()
 
     pub = rospy.Publisher("/finished", Bool, queue_size=10)
     msg = Bool()
@@ -23,13 +25,16 @@ def main():
     roslaunch.configure_logging(uuid)
     launch = roslaunch.parent.ROSLaunchParent(uuid, [LAUNCH_FILE])
     range_finder.start_recording()
+    cam.start_recording()
     launch.start()
 
     rospy.loginfo("Launched")
     rospy.sleep(90)
 
     launch.shutdown()
+    cam.stop_recording()
     range_finder.stop_recording()
+    
 
     # publish finished message
     msg.data = True
