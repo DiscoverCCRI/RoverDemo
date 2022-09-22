@@ -5,7 +5,6 @@ import roslaunch
 import rospy
 from std_msgs.msg import Bool
 from rover_api.discover_lidar import Lidar
-from rover_api.discover_camera import Camera
 
 LAUNCH_FILE = "/opt/ros/noetic/share/leo_example_follow_ar_tag/launch" \
               "/follow_ar_tag.launch"
