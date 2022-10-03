@@ -2,7 +2,13 @@
 An example experiment for our NSF demo
 
 # Installation
-Pull the docker image cjb873/leorover_demo:1.0 on both rovers. Clone this repo on both rovers. 
+Please run the following commands:
+```
+docker pull cjb873/leorover_demo:1.0
+```
+```
+git clone http://github.com/DiscoverCCRI/RoverDemo.git
+```
 
 # Run
 Run the line follower program as a python script on the leader rover.
