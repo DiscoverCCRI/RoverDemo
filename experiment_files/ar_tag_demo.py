@@ -26,7 +26,7 @@ def main():
     launch.start()
 
     rospy.loginfo("Launched")
-    rospy.sleep(75)
+    rospy.sleep(60)
 
     launch.shutdown()
     range_finder.stop_recording()
